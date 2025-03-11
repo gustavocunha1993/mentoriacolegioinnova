@@ -1,0 +1,100 @@
+/* Reset básico */
+body, h1, h2, p, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+
+.header {
+    padding: 30px 20px;
+    background: linear-gradient(45deg, #5b00b4, #0074ff);
+    color: white;
+    text-align: center;
+}
+
+.header .logo {
+    max-width: 220px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.unit h2 {
+    font-size: 22px;
+    color: #5b00b4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mentors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.mentor {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px; /* Aumentado de 80px para 100px */
+    height: 100px; /* Aumentado de 80px para 100px */
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.mentor-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0074ff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mentor-name:hover {
+    text-decoration: underline;
+}
+
+.schedule-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 12px;
+    width: 90%; /* Torna o botão mais centralizado */
+    background: #0074ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+.schedule-btn:hover {
+    background: #005bb5;
+}
