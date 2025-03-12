@@ -37,11 +37,17 @@ body {
     padding: 20px;
 }
 
+/* Títulos das Unidades */
 .unit h2 {
-    font-size: 22px;
+    font-size: 28px; /* Aumentado de 22px para 28px */
     color: #5b00b4;
+    font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 20px;
     text-align: center;
+    border-bottom: 4px solid #0074ff; /* Adicionei uma borda para destaque */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .mentors {
