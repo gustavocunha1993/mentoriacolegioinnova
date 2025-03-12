@@ -178,3 +178,57 @@ body {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
+/* Estilos para a Seção de Agendamento Online */
+.online-section {
+    background-color: #f0f8ff; /* Azul bem claro */
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 2px solid #ddd;
+    margin-bottom: 30px; /* Adicionado espaçamento aqui */
+}
+
+.online-section h2 {
+    font-size: 24px;
+    color: #5b00b4;
+    margin-bottom: 20px;
+}
+
+.online-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos específicos para a imagem da seção de agendamento online */
+.online-img {
+    width: 150px; /* Aumenta a largura da imagem */
+    height: 150px; /* Aumenta a altura da imagem */
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%; /* Ajusta a posição vertical da imagem */
+    margin-bottom: 10px; /* Reduzi o margin-bottom para aproximar a imagem do botão */
+}
+
+.schedule-online-btn {
+    display: inline-block;
+    margin: 10px 0; /* Adicionei margin para separar o botão da imagem e do texto */
+    padding: 10px 15px;
+    background: #0074ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.schedule-online-btn:hover {
+    background: #005bb5;
+}
+
+.online-info p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px; /* Adicionei um pouco de margin-top para separar o texto do botão */
+}
