@@ -47,7 +47,7 @@ body {
 
 /* Estilos para a seção Sudoeste */
 .unit#sudoeste {
-    background-color: #f7e1f7; /* Um verde claro para Sudoeste */
+    background-color: #e6ffe6; /* Verde claro para Sudoeste */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -107,7 +107,8 @@ body {
     display: block;
     margin: 0 auto;
     padding: 8px 12px;
-    width: 90%; /* Torna o botão mais centralizado */
+    width: 100%; /* Largura de 100% do container */
+    max-width: 200px; /* Largura máxima para evitar que fiquem muito grandes em telas maiores */
     background: #0074ff;
     color: white;
     border: none;
@@ -115,6 +116,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     text-align: center;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 .schedule-btn:hover {
