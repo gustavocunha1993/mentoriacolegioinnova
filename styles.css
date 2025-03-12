@@ -47,7 +47,7 @@ body {
 
 /* Estilos para a seção Sudoeste */
 .unit#sudoeste {
-    background-color: #e6ffe6; /* Verde claro para Sudoeste */
+    background-color: #ece7ec; /* Verde claro para Sudoeste */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -134,4 +134,47 @@ body {
     .mentor {
         padding: 10px; /* Reduz o preenchimento nos cards dos mentores */
     }
+}
+
+/* Estilos para a Seção de Contato */
+.contact-section {
+    background-color: #f0f0f0;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 2px solid #ddd;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    color: #5b00b4;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.contact-info a {
+    color: #0074ff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
