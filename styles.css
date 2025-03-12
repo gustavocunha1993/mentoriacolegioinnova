@@ -37,6 +37,22 @@ body {
     padding: 20px;
 }
 
+/* Estilos para a seção Jardim Botânico */
+.unit#jardim-botanico {
+    background-color: #e6f7ff; /* Um azul claro para Jardim Botânico */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para a seção Sudoeste */
+.unit#sudoeste {
+    background-color: #f7e1f7; /* Um verde claro para Sudoeste */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
 /* Títulos das Unidades */
 .unit h2 {
     font-size: 28px; /* Aumentado de 22px para 28px */
@@ -103,4 +119,17 @@ body {
 
 .schedule-btn:hover {
     background: #005bb5;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 20px; /* Reduz o tamanho da fonte no cabeçalho */
+    }
+    .mentors {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduz o tamanho mínimo dos cards dos mentores */
+    }
+    .mentor {
+        padding: 10px; /* Reduz o preenchimento nos cards dos mentores */
+    }
 }
