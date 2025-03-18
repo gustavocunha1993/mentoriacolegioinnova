@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentores - In-nova</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para o modal */
+        .modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #0074ff;
+            color: white;
+        }
+
+        .modal-content button:hover {
+            background-color: #005bb5;
+        }
+
+        /* Esconde as seções inicialmente */
+        .unit {
+            display: none;
+        }
+
+        /* Mostra a seção selecionada */
+        .unit.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -13,6 +61,16 @@
             Lembramos que sua mentoria será no formato presencial na sala estipulada
         </h1>
     </header>
+
+    <!-- Modal de Escolha da Unidade -->
+    <div class="modal" id="unitModal">
+        <div class="modal-content">
+            <h2>Você estuda em qual unidade?</h2>
+            <button onclick="showUnit('jardim-botanico')">Jardim Botânico</button>
+            <button onclick="showUnit('sudoeste')">Sudoeste</button>
+        </div>
+    </div>
+
     <main class="main-content">
         <!-- Jardim Botânico -->
         <section class="unit" id="jardim-botanico">
@@ -36,7 +94,7 @@
                 <div class="mentor">
                     <img src="gustavocunha1.png" alt="Foto de Gustavo Cunha" class="profile-img">
                     <a href="https://calendly.com/gustavo-cunha93/mentoria-mentor-gustavo-cunha-sw-clone" class="mentor-name">Gustavo C. (JB)<br> Local: Sala 1ºB </a>
-                    <a href="https://calendly.com/gustavo-cunha93/mentoria-mentor-gustavo-cunha-sw-clone" class="schedule-btn">Agende com Gustavo C.</a>
+                    <a href="https://calendly.com/gustavo-cunha93/mentoria-mentor-gustavo-cunha-sw-clone" class="schedule-btn">Agende com Gustavo Cunha</a>
                 </div>
             </div>
         </section>
@@ -57,8 +115,8 @@
                 </div>
                 <div class="mentor">
                     <img src="brunosalazar.jpg" alt="Foto de Bruno Salazar" class="profile-img">
-                    <a href="https://calendly.com/bruno-salazar-innovasw/15min" class="mentor-name">Bruno Salazar (Sudoeste)<br> Local: Sala de Espera (EM)</a>
-                    <a href="https://calendly.com/bruno-salazar-innovasw/15min" class="schedule-btn">Agende com Bruno Salazar</a>
+                    <a href="https://calendly.com/bruno-salazar-innovasw/30min" class="mentor-name">Bruno Salazar (Sudoeste)<br> Local: Sala de Espera (EM)</a>
+                    <a href="https://calendly.com/bruno-salazar-innovasw/30min" class="schedule-btn">Agende com Bruno Salazar</a>
                 </div>
                 <div class="mentor">
                     <img src="gustavocunha1.png" alt="Foto de Gustavo Cunha" class="profile-img">
@@ -86,9 +144,23 @@
             <img src="gustavocunha1.png" alt="Foto de Gustavo Cunha" class="contact-img">
             <p>Gustavo Cunha<br>
                 Contato para resolução de problemas:<br>
-                <a href="https://wa.me/5561974038706">61 97403-8706 (WhatsApp)</a>
+                <a href="https://wa.me/5561996628120" >61 99662-8120 (WhatsApp)</a>
             </p>
         </div>
     </section>
+
+    <script>
+        function showUnit(unitId) {
+            // Esconde o modal
+            document.getElementById('unitModal').style.display = 'none';
+
+            // Esconde todas as seções de unidade
+            const units = document.querySelectorAll('.unit');
+            units.forEach(unit => unit.classList.remove('active'));
+
+            // Mostra a seção selecionada
+            document.getElementById(unitId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
