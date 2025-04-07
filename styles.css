@@ -19,8 +19,8 @@ body {
     color: white;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
+    flex-direction: column;
+    align-items: center;
 }
 
 .header .logo {
@@ -38,13 +38,13 @@ body {
 
 .main-content {
     padding: 20px;
-    overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
-    white-space: nowrap; /* Impede quebras de linha */
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 /* Estilos para a seção Jardim Botânico */
 .unit#jardim-botanico {
-    background-color: #e6f7ff; /* Um azul claro para Jardim Botânico */
+    background-color: #e6f7ff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -52,7 +52,7 @@ body {
 
 /* Estilos para a seção Sudoeste */
 .unit#sudoeste {
-    background-color: #ece7ec; /* Verde claro para Sudoeste */
+    background-color: #ece7ec;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -60,13 +60,13 @@ body {
 
 /* Títulos das Unidades */
 .unit h2 {
-    font-size: 28px; /* Aumentado de 22px para 28px */
+    font-size: 28px;
     color: #5b00b4;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 20px;
     text-align: center;
-    border-bottom: 4px solid #0074ff; /* Adicionei uma borda para destaque */
+    border-bottom: 4px solid #0074ff;
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -76,7 +76,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     justify-content: center;
-    margin-bottom: 20px; /* Espaço entre mentores e botão */
+    margin-bottom: 20px;
 }
 
 .mentor {
@@ -88,8 +88,8 @@ body {
 }
 
 .profile-img {
-    width: 100px; /* Aumentado de 80px para 100px */
-    height: 100px; /* Aumentado de 80px para 100px */
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
     border-radius: 50%;
     object-fit: cover;
@@ -113,8 +113,8 @@ body {
     display: block;
     margin: 0 auto;
     padding: 8px 12px;
-    width: 100%; /* Largura de 100% do container */
-    max-width: 200px; /* Largura máxima para evitar que fiquem muito grandes em telas maiores */
+    width: 100%;
+    max-width: 200px;
     background: #0074ff;
     color: white;
     border: none;
@@ -122,7 +122,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     text-align: center;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    box-sizing: border-box;
 }
 
 .schedule-btn:hover {
@@ -132,13 +132,22 @@ body {
 /* Media Query para Responsividade */
 @media (max-width: 600px) {
     .header h1 {
-        font-size: 20px; /* Reduz o tamanho da fonte no cabeçalho */
+        font-size: 20px;
     }
     .mentors {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduz o tamanho mínimo dos cards dos mentores */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
     .mentor {
-        padding: 10px; /* Reduz o preenchimento nos cards dos mentores */
+        padding: 10px;
+    }
+
+    /* Ajuste para o texto "Local" */
+    .mentor-name {
+        white-space: normal; /* Permite que o texto quebre normalmente */
+        word-break: break-word; /* Quebra palavras longas se necessário */
+    }
+    .mentor-name br {
+        display: none; /* Remove a quebra de linha forçada */
     }
 }
 
@@ -187,11 +196,11 @@ body {
 
 /* Estilos para a Seção de Agendamento Online */
 .online-section {
-    background-color: #f0f8ff; /* Azul bem claro */
+    background-color: #f0f8ff;
     padding: 30px 20px;
     text-align: center;
     border-top: 2px solid #ddd;
-    margin-bottom: 30px; /* Adicionado espaçamento aqui */
+    margin-bottom: 30px;
 }
 
 .online-section h2 {
@@ -208,17 +217,17 @@ body {
 
 /* Estilos específicos para a imagem da seção de agendamento online */
 .online-img {
-    width: 150px; /* Aumenta a largura da imagem */
-    height: 150px; /* Aumenta a altura da imagem */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 15%; /* Ajusta a posição vertical da imagem */
-    margin-bottom: 10px; /* Reduzi o margin-bottom para aproximar a imagem do botão */
+    object-position: center 15%;
+    margin-bottom: 10px;
 }
 
 .schedule-online-btn {
     display: inline-block;
-    margin: 10px 0; /* Adicionei margin para separar o botão da imagem e do texto */
+    margin: 10px 0;
     padding: 10px 15px;
     background: #0074ff;
     color: white;
@@ -236,17 +245,17 @@ body {
 .online-info p {
     font-size: 16px;
     color: #333;
-    margin-top: 5px; /* Adicionei um pouco de margin-top para separar o texto do botão */
+    margin-top: 5px;
 }
 
 /* Estilos para os botões de ação */
 .action-buttons {
     display: flex;
-    flex-direction: column; /* Alinha os botões verticalmente */
-    align-items: center; /* Centraliza os botões horizontalmente */
-    gap: 10px; /* Espaçamento entre os botões */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
-    margin-bottom: 10px; /* Reduz o espaçamento abaixo dos botões de ação */
+    margin-bottom: 10px;
 }
 
 .action-buttons a,
@@ -259,14 +268,14 @@ body {
     color: white;
     text-decoration: none;
     display: inline-block;
-    width: auto; /* Ajusta a largura ao conteúdo */
-    min-width: 200px; /* Largura mínima para melhor aparência */
-    text-align: center; /* Centraliza o texto dentro dos botões */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+    width: auto;
+    min-width: 200px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .action-buttons a {
-    background-color: #6772e5; /* Azul mais suave */
+    background-color: #6772e5;
 }
 
 .action-buttons a:hover {
@@ -274,7 +283,7 @@ body {
 }
 
 .action-buttons button.schedule-btn {
-    background-color: #59ca96; /* Verde-água suave */
+    background-color: #59ca96;
 }
 
 .action-buttons button.schedule-btn:hover {
@@ -284,14 +293,14 @@ body {
 /* Estilos para a seção de vídeos (estrategias-prova.html) */
 .video-section {
     margin-bottom: 30px;
-    text-align: center; /* Centraliza os vídeos */
+    text-align: center;
 }
 
 .video-container {
-    display: inline-block; /* Permite que os vídeos fiquem lado a lado */
-    margin: 0 10px; /* Espaçamento entre os vídeos */
-    max-width: 560px; /* Largura máxima do vídeo */
-    width: 100%; /* Garante que o vídeo preencha o contêiner */
+    display: inline-block;
+    margin: 0 10px;
+    max-width: 560px;
+    width: 100%;
 }
 
 .video-container iframe {
@@ -307,21 +316,21 @@ body {
 
 /* Estilos para aumentar o espaçamento entre os botões e os mentores */
 #action-buttons-jb, #action-buttons-sw {
-    margin-bottom: 30px; /* Aumenta o espaçamento para 30px */
+    margin-bottom: 30px;
 }
 
 /* Estilos para o botão de troca de unidade */
 .change-unit-btn {
-    background-color: #ff7e5f; /* Laranja-coral vibrante */
+    background-color: #ff7e5f;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px; /* Reduz o espaçamento acima do botão */
-    margin-bottom: 20px; /* Adiciona espaçamento abaixo do botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .change-unit-btn:hover {
@@ -345,12 +354,12 @@ body {
 
 /* Estilos para os botões de ação no header */
 .header .action-buttons {
-    margin-top: 10px; /* Reduz a margem superior */
-    margin-bottom: 10px; /* Adiciona margem inferior para separar do conteúdo abaixo */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .header .action-buttons a {
-    display: inline-block; /* Alinha os botões horizontalmente */
+    display: inline-block;
 }
 
 /* Estilos para o container dos botões de ação e troca de unidade */
@@ -358,5 +367,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Espaçamento abaixo dos botões */
+    margin-bottom: 20px;
 }
