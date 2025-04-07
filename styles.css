@@ -18,6 +18,9 @@ body {
     background: linear-gradient(45deg, #5b00b4, #0074ff);
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 .header .logo {
@@ -35,6 +38,8 @@ body {
 
 .main-content {
     padding: 20px;
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
+    white-space: nowrap; /* Impede quebras de linha */
 }
 
 /* Estilos para a seção Jardim Botânico */
@@ -71,6 +76,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     justify-content: center;
+    margin-bottom: 20px; /* Espaço entre mentores e botão */
 }
 
 .mentor {
@@ -231,4 +237,126 @@ body {
     font-size: 16px;
     color: #333;
     margin-top: 5px; /* Adicionei um pouco de margin-top para separar o texto do botão */
+}
+
+/* Estilos para os botões de ação */
+.action-buttons {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    align-items: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+    margin-bottom: 10px; /* Reduz o espaçamento abaixo dos botões de ação */
+}
+
+.action-buttons a,
+.action-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: auto; /* Ajusta a largura ao conteúdo */
+    min-width: 200px; /* Largura mínima para melhor aparência */
+    text-align: center; /* Centraliza o texto dentro dos botões */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.action-buttons a {
+    background-color: #6772e5; /* Azul mais suave */
+}
+
+.action-buttons a:hover {
+    background-color: #535dbf;
+}
+
+.action-buttons button.schedule-btn {
+    background-color: #59ca96; /* Verde-água suave */
+}
+
+.action-buttons button.schedule-btn:hover {
+    background-color: #44b181;
+}
+
+/* Estilos para a seção de vídeos (estrategias-prova.html) */
+.video-section {
+    margin-bottom: 30px;
+    text-align: center; /* Centraliza os vídeos */
+}
+
+.video-container {
+    display: inline-block; /* Permite que os vídeos fiquem lado a lado */
+    margin: 0 10px; /* Espaçamento entre os vídeos */
+    max-width: 560px; /* Largura máxima do vídeo */
+    width: 100%; /* Garante que o vídeo preencha o contêiner */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+}
+
+.video-section p {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Estilos para aumentar o espaçamento entre os botões e os mentores */
+#action-buttons-jb, #action-buttons-sw {
+    margin-bottom: 30px; /* Aumenta o espaçamento para 30px */
+}
+
+/* Estilos para o botão de troca de unidade */
+.change-unit-btn {
+    background-color: #ff7e5f; /* Laranja-coral vibrante */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Reduz o espaçamento acima do botão */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.change-unit-btn:hover {
+    background-color: #e66244;
+}
+
+/* Estilos para alinhar o botão ao lado do título na página de vídeos */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.header .action-buttons {
+    margin-top: 10px;
+}
+
+/* Estilos para os botões de ação no header */
+.header .action-buttons {
+    margin-top: 10px; /* Reduz a margem superior */
+    margin-bottom: 10px; /* Adiciona margem inferior para separar do conteúdo abaixo */
+}
+
+.header .action-buttons a {
+    display: inline-block; /* Alinha os botões horizontalmente */
+}
+
+/* Estilos para o container dos botões de ação e troca de unidade */
+.unit-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento abaixo dos botões */
 }

@@ -57,7 +57,7 @@
 <body>
     <header class="header">
         <img src="innova.png" alt="Logo Colégio In-nova" class="logo">
-        <h1>Futuro universitário, escolha aqui o Mentor que te acompanha.<br>
+        <h1>Futuro universitário, escolha aqui a sua unidade.<br>
             Lembramos que sua mentoria será no formato presencial na sala estipulada
         </h1>
     </header>
@@ -75,7 +75,14 @@
         <!-- Jardim Botânico -->
         <section class="unit" id="jardim-botanico">
             <h2>Jardim Botânico</h2>
-            <div class="mentors">
+            <div class="unit-actions">
+                <div class="action-buttons" id="action-buttons-jb">
+                    <a href="estrategias-prova.html" class="btn">Ver Vídeos de Estratégia de Prova</a>
+                    <button onclick="showMentors('jardim-botanico')" class="btn schedule-btn">Agendar Mentoria</button>
+                </div>
+                <button onclick="showUnit('sudoeste')" class="change-unit-btn">Trocar para Sudoeste</button>
+            </div>
+            <div class="mentors" id="mentors-jb" style="display: none;">
                 <div class="mentor">
                     <img src="gipestana.jpg" alt="Foto de Giovanna Pestana" class="profile-img">
                     <a href="https://calendly.com/githpestana/mentoria-mentora-giovanna-pestana" class="mentor-name">Giovanna Pestana<br> Local: Sala 1º A</a>
@@ -102,7 +109,14 @@
         <!-- Sudoeste -->
         <section class="unit" id="sudoeste">
             <h2>Sudoeste</h2>
-            <div class="mentors">
+            <div class="unit-actions">
+                <div class="action-buttons" id="action-buttons-sw">
+                    <a href="estrategias-prova.html" class="btn">Ver Vídeos de Estratégia de Prova</a>
+                    <button onclick="showMentors('sudoeste')" class="btn schedule-btn">Agendar Mentoria</button>
+                </div>
+                <button onclick="showUnit('jardim-botanico')" class="change-unit-btn">Trocar para Jardim Botânico</button>
+            </div>
+            <div class="mentors" id="mentors-sw" style="display: none;">
                 <div class="mentor">
                     <img src="lara.JPG" alt="Foto de Lara" class="profile-img">
                     <a href="https://calendly.com/lara-gomes180/nova-reuniao" class="mentor-name">Lara<br> Local: Sala Mentoria (EM)</a>
@@ -144,7 +158,7 @@
             <img src="gustavocunha1.png" alt="Foto de Gustavo Cunha" class="contact-img">
             <p>Gustavo Cunha<br>
                 Contato para resolução de problemas:<br>
-                <a href="https://wa.me/5561996628120" >61 99662-8120 (WhatsApp)</a>
+                <a href="https://wa.me/5561974038706" >61 97403-8706 (WhatsApp)</a>
             </p>
         </div>
     </section>
@@ -156,10 +170,29 @@
 
             // Esconde todas as seções de unidade
             const units = document.querySelectorAll('.unit');
-            units.forEach(unit => unit.classList.remove('active'));
+            units.forEach(unit => {
+                unit.classList.remove('active');
+            });
 
             // Mostra a seção selecionada
-            document.getElementById(unitId).classList.add('active');
+            const unit = document.getElementById(unitId);
+            unit.classList.add('active');
+
+            // Garante que os mentores estejam escondidos ao trocar de unidade
+            const mentorsDivId = `mentors-${unitId === 'jardim-botanico' ? 'jb' : 'sw'}`;
+            const mentorsDiv = document.getElementById(mentorsDivId);
+            if (mentorsDiv) {
+                mentorsDiv.style.display = 'none';
+            }
+        }
+
+        function showMentors(unitId) {
+            const mentorsDivId = `mentors-${unitId === 'jardim-botanico' ? 'jb' : 'sw'}`;
+            const mentorsDiv = document.getElementById(mentorsDivId);
+
+            if (mentorsDiv) {
+                mentorsDiv.style.display = 'grid';
+            }
         }
     </script>
 </body>
