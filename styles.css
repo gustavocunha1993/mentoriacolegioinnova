@@ -115,6 +115,7 @@ body {
     padding: 8px 12px;
     width: 100%;
     max-width: 200px;
+    min-width: 220px; /* Aumenta a largura mínima para 220px */
     background: #0074ff;
     color: white;
     border: none;
@@ -123,6 +124,7 @@ body {
     font-size: 14px;
     text-align: center;
     box-sizing: border-box;
+    word-break: break-word; /* Adiciona quebra de palavra */
 }
 
 .schedule-btn:hover {
@@ -143,11 +145,11 @@ body {
 
     /* Ajuste para o texto "Local" */
     .mentor-name {
-        white-space: normal; /* Permite que o texto quebre normalmente */
-        word-break: break-word; /* Quebra palavras longas se necessário */
+        white-space: normal;
+        word-break: break-word;
     }
     .mentor-name br {
-        display: none; /* Remove a quebra de linha forçada */
+        display: none;
     }
 }
 
@@ -181,7 +183,7 @@ body {
 
 .contact-info p {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.6;
     color: #333;
 }
 
