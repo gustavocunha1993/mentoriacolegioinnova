@@ -1,173 +1,146 @@
-/* Reset básico */
-body, h1, h2, p, a, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* style.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
     color: #333;
-    text-align: center;
 }
 
 .header {
-    padding: 30px 20px;
-    background: linear-gradient(45deg, #5b00b4, #0074ff);
+    background-color: #0074ff;
     color: white;
+    padding: 20px 0;
     text-align: center;
 }
 
-.header .logo {
-    max-width: 220px;
-    margin: 0 auto 20px auto;
-    display: block;
+.header h1 {
+    margin: 0;
+    font-size: 2em;
 }
 
-.header h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-    line-height: 1.4;
+.logo {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 .main-content {
     padding: 20px;
 }
 
-/* Estilos para a seção Jardim Botânico */
-.unit#jardim-botanico {
-    background-color: #e6f7ff; /* Um azul claro para Jardim Botânico */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-/* Estilos para a seção Sudoeste */
-.unit#sudoeste {
-    background-color: #ece7ec; /* Verde claro para Sudoeste */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-/* Títulos das Unidades */
-.unit h2 {
-    font-size: 28px; /* Aumentado de 22px para 28px */
-    color: #5b00b4;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+.unit {
+    margin-bottom: 30px;
     text-align: center;
-    border-bottom: 4px solid #0074ff; /* Adicionei uma borda para destaque */
-    display: inline-block;
-    padding-bottom: 5px;
 }
 
+.unit h2 {
+    color: #0074ff;
+}
+
+.unit-actions {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #5cb85c;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #449d44;
+}
+
+/* Estilos para a seção de mentores */
 .mentors {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     justify-content: center;
+    padding: 20px;
 }
 
 .mentor {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-img {
-    width: 100px; /* Aumentado de 80px para 100px */
-    height: 100px; /* Aumentado de 80px para 100px */
-    margin: 0 auto;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
 }
 
 .mentor-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0074ff;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
     text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .mentor-name:hover {
-    text-decoration: underline;
+    color: #0074ff;
 }
 
-.schedule-btn {
-    display: block;
-    margin: 0 auto;
-    padding: 8px 12px;
-    width: 100%; /* Largura de 100% do container */
-    max-width: 200px; /* Largura máxima para evitar que fiquem muito grandes em telas maiores */
-    background: #0074ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+/* Seção de agendamento online */
+.online-section {
+    background-color: #e9ecef;
+    padding: 20px;
+    margin-top: 30px;
     text-align: center;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
-.schedule-btn:hover {
-    background: #005bb5;
-}
-
-/* Media Query para Responsividade */
-@media (max-width: 600px) {
-    .header h1 {
-        font-size: 20px; /* Reduz o tamanho da fonte no cabeçalho */
-    }
-    .mentors {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduz o tamanho mínimo dos cards dos mentores */
-    }
-    .mentor {
-        padding: 10px; /* Reduz o preenchimento nos cards dos mentores */
-    }
-}
-
-/* Estilos para a Seção de Contato */
-.contact-section {
-    background-color: #f0f0f0;
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 2px solid #ddd;
-}
-
-.contact-section h2 {
-    font-size: 24px;
-    color: #5b00b4;
-    margin-bottom: 20px;
-}
-
-.contact-info {
+.online-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
+}
+
+.online-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Seção de contato */
+.contact-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 20px;
 }
 
 .contact-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
+    margin-bottom: 10px;
 }
 
 .contact-info a {
@@ -179,56 +152,24 @@ body {
     text-decoration: underline;
 }
 
-/* Estilos para a Seção de Agendamento Online */
-.online-section {
-    background-color: #f0f8ff; /* Azul bem claro */
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 2px solid #ddd;
-    margin-bottom: 30px; /* Adicionado espaçamento aqui */
+/* Estilos para os vídeos */
+.video-container {
+    max-width: 800px; /* Ajuste este valor conforme necessário */
+    margin: 20px auto;
 }
 
-.online-section h2 {
-    font-size: 24px;
-    color: #5b00b4;
-    margin-bottom: 20px;
+.video-container iframe {
+    width: 100%;
+    height: auto;
 }
 
-.online-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
 
-/* Estilos específicos para a imagem da seção de agendamento online */
-.online-img {
-    width: 150px; /* Aumenta a largura da imagem */
-    height: 150px; /* Aumenta a altura da imagem */
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 15%; /* Ajusta a posição vertical da imagem */
-    margin-bottom: 10px; /* Reduzi o margin-bottom para aproximar a imagem do botão */
-}
-
-.schedule-online-btn {
-    display: inline-block;
-    margin: 10px 0; /* Adicionei margin para separar o botão da imagem e do texto */
-    padding: 10px 15px;
-    background: #0074ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.schedule-online-btn:hover {
-    background: #005bb5;
-}
-
-.online-info p {
-    font-size: 16px;
-    color: #333;
-    margin-top: 5px; /* Adicionei um pouco de margin-top para separar o texto do botão */
+    .mentors {
+        grid-template-columns: 1fr;
+    }
 }
