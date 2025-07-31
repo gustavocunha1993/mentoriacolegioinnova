@@ -28,22 +28,18 @@ body {
 
 .main-content {
     padding: 20px;
+    max-width: 1200px; /* Adicionado para centralizar e limitar a largura em telas grandes */
+    margin: 0 auto; /* Centraliza o conteúdo principal */
 }
 
-.unit {
-    margin-bottom: 30px;
+/* Centraliza o título dos mentores */
+.main-content h2 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.unit h2 {
-    color: #0074ff;
-}
-
-.unit-actions {
-    margin-top: 20px;
-}
-
-.btn {
+/* Estilo para todos os botões de agendamento */
+.schedule-btn {
     display: inline-block;
     padding: 10px 15px;
     margin: 10px;
@@ -51,19 +47,21 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    background-color: #5cb85c;
+    background-color: #0074ff; /* Azul padrão */
     color: white;
     text-decoration: none;
+    transition: background-color 0.3s ease; /* Suaviza a transição de hover */
 }
 
-.btn:hover {
-    background-color: #449d44;
+.schedule-btn:hover {
+    background-color: #005bb5; /* Azul mais escuro no hover */
 }
+
 
 /* Estilos para a seção de mentores */
 .mentors {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colunas em telas maiores, mínimo 300px por card */
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -78,6 +76,11 @@ body {
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Adiciona efeito de hover */
+}
+
+.mentor:hover {
+    transform: translateY(-5px); /* Eleva o card no hover */
 }
 
 .profile-img {
@@ -86,7 +89,23 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    border: 3px solid #0074ff; /* Borda azul na imagem */
+    object-position: center center; /* Padrão: centralizado */
 }
+
+/* Ajustes específicos para as fotos dos mentores */
+.profile-img[src="Guilherme_Viterbo.jpeg"] {
+    object-position: 50% 20%; /* Subiu mais um pouco */
+}
+
+.profile-img[src="Helena.jpeg"] {
+    object-position: 50% 5%; /* Ajuste para descer menos */
+}
+
+.profile-img[src="mariacecilia.jpeg"] {
+    object-position: 50% 20%; /* Subiu mais um pouco */
+}
+
 
 .mentor-name {
     margin-top: 10px;
@@ -94,33 +113,24 @@ body {
     color: #333;
     text-decoration: none;
     font-weight: bold;
+    line-height: 1.4; /* Espaçamento entre linhas */
 }
 
 .mentor-name:hover {
     color: #0074ff;
 }
 
-/* Seção de agendamento online */
-.online-section {
-    background-color: #e9ecef;
-    padding: 20px;
-    margin-top: 30px;
+/* Nota sobre mentorias online */
+.online-note {
     text-align: center;
-}
-
-.online-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.online-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #e9f5ff; /* Fundo azul claro */
+    border-left: 5px solid #0074ff;
+    border-radius: 8px;
+    max-width: 800px;
+    color: #004085;
+    font-size: 0.95em;
 }
 
 /* Seção de contato */
@@ -141,6 +151,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    border: 3px solid #0074ff; /* Borda azul na imagem */
 }
 
 .contact-info a {
@@ -152,24 +163,18 @@ body {
     text-decoration: underline;
 }
 
-/* Estilos para os vídeos */
-.video-container {
-    max-width: 800px; /* Ajuste este valor conforme necessário */
-    margin: 20px auto;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: auto;
-}
-
 /* Media queries para responsividade */
+@media (max-width: 1024px) {
+    .mentors {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 colunas em tablets */
+    }
+}
+
 @media (max-width: 768px) {
     .header h1 {
         font-size: 1.5em;
     }
-
     .mentors {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
     }
 }
