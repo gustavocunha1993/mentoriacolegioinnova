@@ -21,13 +21,18 @@
             <!-- Mentores -->
             <div class="mentor">
                 <img src="gipestana.jpg" alt="Foto de Giovanna Pestana" class="profile-img">
-                <a href="https://calendly.com/githpestana" class="mentor-name">Giovanna Pestana<br> (Formato Online)</a>
-                <a href="https://calendly.com/githpestana" class="schedule-btn" >Agende com Giovanna P.</a>
+                <a href="https://calendly.com/githpestana/mentoria-mentora-giovanna-pestana" class="mentor-name">Giovanna Pestana<br> (Formato Online)</a>
+                <a href="https://calendly.com/githpestana/mentoria-mentora-giovanna-pestana" class="schedule-btn" >Agende com Giovanna P.</a>
             </div>
             <div class="mentor">
                 <img src="arthuralmeida.jpeg" alt="Foto de Arthur Almeida" class="profile-img">
                 <a href="https://calendly.com/almeidaarthur25/mentor-arthur" class="mentor-name">Arthur Almeida<br> (Formato Online)</a>
                 <a href="https://calendly.com/almeidaarthur25/mentor-arthur" class="schedule-btn" >Agende com Arthur Almeida</a>
+            </div>
+            <div class="mentor">
+                <img src="brunosalazar.jpg" alt="Foto de Bruno Salazar" class="profile-img">
+                <a href="https://calendly.com/profbsalazar/30min" class="mentor-name">Bruno Salazar<br> (Formato Online)</a>
+                <a href="https://calendly.com/profbsalazar/30min" class="schedule-btn" >Agende com Bruno Salazar</a>
             </div>
             <div class="mentor">
                 <img src="Luiza.jpeg" alt="Foto de Luiza Ávila" class="profile-img">
@@ -39,6 +44,12 @@
                 <a href="https://calendly.com/guilhermecavendish/mentoria---mentor-guilherme-cavendish" class="mentor-name">Guilherme C.<br> (Formato Online)</a>
                 <a href="https://calendly.com/guilhermecavendish/mentoria---mentor-guilherme-cavendish" class="schedule-btn" >Agende com Guilherme Cavendish</a>
             </div>
+           <!-- <div class="mentor">
+                <img src="Guilherme_Viterbo.jpeg" alt="Foto de Guilherme_Viterbo" class="profile-img">
+                <a href="https://calendly.com/guiviterbo/mentoria" class="mentor-name">Guilherme<br> (Formato Online)</a>
+                <a href="https://calendly.com/guiviterbo/mentoria" class="schedule-btn" >Agende com Guilherme Viterbo</a>
+            </div>
+            -->
             <div class="mentor">
                 <img src="Helena.jpeg" alt="Foto de Helena Ferraz" class="profile-img">
                 <a href="https://calendly.com/helenaferrazd/mentoria" class="mentor-name">Helena Ferraz<br> (Formato Online)</a>
@@ -68,29 +79,55 @@
         </section>
     </main>
 
+    <!-- Pop-up para seleção do segmento -->
+    <div class="popup-overlay" id="mentorPopup">
+        <div class="popup-content">
+            <h2>Para qual segmento você gostaria de agendar uma mentoria?</h2>
+            <div class="popup-buttons">
+                <button class="schedule-btn" id="btnEnsinoMedio">Ensino Médio</button>
+                <button class="schedule-btn" id="btn9Ano">9º Ano</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Lógica existente para embaralhar mentores
             const mentorsContainer = document.querySelector('.mentors');
             if (mentorsContainer) {
-                // Obtém todos os elementos de mentor como um array
                 const mentors = Array.from(mentorsContainer.querySelectorAll('.mentor'));
-
-                // Algoritmo Fisher-Yates para embaralhar o array
                 for (let i = mentors.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
-                    [mentors[i], mentors[j]] = [mentors[j], mentors[i]]; // Troca os elementos de posição
+                    [mentors[i], mentors[j]] = [mentors[j], mentors[i]];
                 }
-
-                // Remove os elementos existentes do DOM
                 while (mentorsContainer.firstChild) {
                     mentorsContainer.removeChild(mentorsContainer.firstChild);
                 }
-
-                // Adiciona os elementos embaralhados de volta ao contêiner
                 mentors.forEach(mentor => {
                     mentorsContainer.appendChild(mentor);
                 });
             }
+
+            // Lógica do Pop-up
+            const mentorPopup = document.getElementById('mentorPopup');
+            const btnEnsinoMedio = document.getElementById('btnEnsinoMedio');
+            const btn9Ano = document.getElementById('btn9Ano');
+
+            // Exibe o pop-up com um pequeno atraso para garantir que a página esteja carregada
+            setTimeout(() => {
+                mentorPopup.classList.add('show');
+            }, 500); // Atraso de 500ms
+
+            // Evento para o botão "Ensino Médio"
+            btnEnsinoMedio.addEventListener('click', function() {
+                mentorPopup.classList.remove('show'); // Esconde o pop-up
+                // Não há redirecionamento, pois já estamos na página do Ensino Médio
+            });
+
+            // Evento para o botão "9º Ano"
+            btn9Ano.addEventListener('click', function() {
+                window.location.href = '9ano.html'; // Redireciona para a nova página
+            });
         });
     </script>
 </body>
